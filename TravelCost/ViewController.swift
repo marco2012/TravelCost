@@ -102,18 +102,18 @@ class ViewController: FormViewController {
                     let kmlForm : DecimalRow? = self?.form.rowBy(tag: "kml")
                     let roundtripForm : SwitchRow? = self?.form.rowBy(tag: "roundtrip")
 
-                    if distanceForm?.value==nil || fuel_priceForm?.value==nil {
+                    if distanceForm?.value==nil || fuel_priceForm?.value==nil || l100Form?.value==nil {
                         self!.showAlert(title: "Error", message: "Fill the missing fields")
                     } else {
                     
                         let l100 = Double(l100Form!.value!)
                         var distance = Double(distanceForm!.value!)
                         let fuel_price = Double(fuel_priceForm!.value!)
-                        let kml = Double(kmlForm!.value!)
+                        let kml = 100/l100
                         let roundtrip = roundtripForm!.value!
                         
                         let kml_row = self!.form.rowBy(tag: "kml") as! DecimalRow
-                        kml_row.value = self!.roundToPlaces(value: (100/l100), places: 2)
+                        kml_row.value = self!.roundToPlaces(value: kml, places: 2)
                         kml_row.reload()
                         
                         if (roundtrip) {
