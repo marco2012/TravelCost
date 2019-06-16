@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A583AC0D7623BB2E98A6840 /* Pods_TravelCost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE8DAF42F433C232F6714AC /* Pods_TravelCost.framework */; };
 		A9CBE18C22B67199009A2B5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CBE18B22B67199009A2B5E /* AppDelegate.swift */; };
 		A9CBE18E22B67199009A2B5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CBE18D22B67199009A2B5E /* ViewController.swift */; };
 		A9CBE19122B67199009A2B5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CBE18F22B67199009A2B5E /* Main.storyboard */; };
@@ -15,6 +16,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5FE8DAF42F433C232F6714AC /* Pods_TravelCost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelCost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B624D2F2DA2EFA8736DB82E /* Pods-TravelCost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelCost.debug.xcconfig"; path = "Target Support Files/Pods-TravelCost/Pods-TravelCost.debug.xcconfig"; sourceTree = "<group>"; };
+		A22FE91A5FDD49DDFDEE074C /* Pods-TravelCost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelCost.release.xcconfig"; path = "Target Support Files/Pods-TravelCost/Pods-TravelCost.release.xcconfig"; sourceTree = "<group>"; };
 		A9CBE18822B67199009A2B5E /* TravelCost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelCost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CBE18B22B67199009A2B5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9CBE18D22B67199009A2B5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A583AC0D7623BB2E98A6840 /* Pods_TravelCost.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A32E182041C7AFAAA65A773 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B624D2F2DA2EFA8736DB82E /* Pods-TravelCost.debug.xcconfig */,
+				A22FE91A5FDD49DDFDEE074C /* Pods-TravelCost.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3052558572DBDA3FAAFF7033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FE8DAF42F433C232F6714AC /* Pods_TravelCost.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A9CBE17F22B67199009A2B5E = {
 			isa = PBXGroup;
 			children = (
 				A9CBE18A22B67199009A2B5E /* TravelCost */,
 				A9CBE18922B67199009A2B5E /* Products */,
+				2A32E182041C7AFAAA65A773 /* Pods */,
+				3052558572DBDA3FAAFF7033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A9CBE19A22B6719A009A2B5E /* Build configuration list for PBXNativeTarget "TravelCost" */;
 			buildPhases = (
+				842E6E2170B3496D4AEC1567 /* [CP] Check Pods Manifest.lock */,
 				A9CBE18422B67199009A2B5E /* Sources */,
 				A9CBE18522B67199009A2B5E /* Frameworks */,
 				A9CBE18622B67199009A2B5E /* Resources */,
+				D6B7994250229B5EEB44DF80 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +122,11 @@
 				TargetAttributes = {
 					A9CBE18722B67199009A2B5E = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -129,6 +160,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		842E6E2170B3496D4AEC1567 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelCost-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6B7994250229B5EEB44DF80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelCost/Pods-TravelCost-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelCost/Pods-TravelCost-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelCost/Pods-TravelCost-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A9CBE18422B67199009A2B5E /* Sources */ = {
@@ -280,16 +353,20 @@
 		};
 		A9CBE19B22B6719A009A2B5E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B624D2F2DA2EFA8736DB82E /* Pods-TravelCost.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = R9DFAB66GJ;
 				INFOPLIST_FILE = TravelCost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.vikings.TravelCost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = 1b2da5224189150d793a6f40ec77c83321924c8e;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -297,16 +374,20 @@
 		};
 		A9CBE19C22B6719A009A2B5E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A22FE91A5FDD49DDFDEE074C /* Pods-TravelCost.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = R9DFAB66GJ;
 				INFOPLIST_FILE = TravelCost/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = me.vikings.TravelCost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = 1b2da5224189150d793a6f40ec77c83321924c8e;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
