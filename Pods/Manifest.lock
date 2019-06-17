@@ -1,16 +1,21 @@
 PODS:
   - Eureka (5.0.0)
+  - GooglePlacesRow (3.2.0):
+    - Eureka (~> 5.0)
 
 DEPENDENCIES:
   - Eureka
+  - GooglePlacesRow
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Eureka
+    - GooglePlacesRow
 
 SPEC CHECKSUMS:
   Eureka: 0f64f477ec8ef6201c6fec143d60ff5c201cf654
+  GooglePlacesRow: 4cd1b667226b951baf6fcf33c64f56e03d9a05ee
 
-PODFILE CHECKSUM: 6d7f66acdf533711513020b9ab527f3c44e278f8
+PODFILE CHECKSUM: d70fcefc4f8a991ff8492e388b23c77fa6fd195a
 
 COCOAPODS: 1.7.1
