@@ -24,29 +24,29 @@ class ViewController: FormViewController {
             
             +++ Section()
             
-            <<< GooglePlacesTableRow() { row in
-                row.placeFilter?.type = .address    //suggest addresses
-                row.placeholder = "Enter start location"
-                row.tag = "start_location" // Upon parsing a form you get a nice key if you use a tag
-                row.add(ruleSet: RuleSet<GooglePlace>()) // We can use GooglePlace() as a rule
-                row.validationOptions = .validatesOnChangeAfterBlurred
-                row.cell.textLabel?.textColor = UIColor.black
-                row.cell.textLabel?.numberOfLines = 0
-                }
-                .cellUpdate { cell, row in // Optional
-                }
-            
-            <<< GooglePlacesTableRow() { row in
-                row.placeFilter?.type = .address    //suggest addresses
-                row.placeholder = "Enter end location"
-                row.tag = "end_location" // Upon parsing a form you get a nice key if you use a tag
-                row.add(ruleSet: RuleSet<GooglePlace>()) // We can use GooglePlace() as a rule
-                row.validationOptions = .validatesOnChangeAfterBlurred
-                row.cell.textLabel?.textColor = UIColor.black
-                row.cell.textLabel?.numberOfLines = 0
-                }
-                .cellUpdate { cell, row in // Optional
-            }
+//            <<< GooglePlacesTableRow() { row in
+//                row.placeFilter?.type = .address    //suggest addresses
+//                row.placeholder = "Enter start location"
+//                row.tag = "start_location" // Upon parsing a form you get a nice key if you use a tag
+//                row.add(ruleSet: RuleSet<GooglePlace>()) // We can use GooglePlace() as a rule
+//                row.validationOptions = .validatesOnChangeAfterBlurred
+//                row.cell.textLabel?.textColor = UIColor.black
+//                row.cell.textLabel?.numberOfLines = 0
+//                }
+//                .cellUpdate { cell, row in // Optional
+//                }
+//
+//            <<< GooglePlacesTableRow() { row in
+//                row.placeFilter?.type = .address    //suggest addresses
+//                row.placeholder = "Enter end location"
+//                row.tag = "end_location" // Upon parsing a form you get a nice key if you use a tag
+//                row.add(ruleSet: RuleSet<GooglePlace>()) // We can use GooglePlace() as a rule
+//                row.validationOptions = .validatesOnChangeAfterBlurred
+//                row.cell.textLabel?.textColor = UIColor.black
+//                row.cell.textLabel?.numberOfLines = 0
+//                }
+//                .cellUpdate { cell, row in // Optional
+//            }
             
             <<< DecimalRow() {
                 $0.title = "Distance"
@@ -139,20 +139,20 @@ class ViewController: FormViewController {
                     
                     DispatchQueue.main.async {
                     
-                        let start_locationForm: GooglePlacesTableRow? = self?.form.rowBy(tag: "start_location")
-                        let end_locationForm: GooglePlacesTableRow? = self?.form.rowBy(tag: "end_location")
+//                        let start_locationForm: GooglePlacesTableRow? = self?.form.rowBy(tag: "start_location")
+//                        let end_locationForm: GooglePlacesTableRow? = self?.form.rowBy(tag: "end_location")
                         let distanceForm: DecimalRow? = self?.form.rowBy(tag: "distance")
                         let fuel_priceForm : DecimalRow? = self?.form.rowBy(tag: "fuel_price")
 //                        let l100Form : DecimalRow? = self?.form.rowBy(tag: "l100")
                         let kmlForm : DecimalRow? = self?.form.rowBy(tag: "kml")
                         let roundtripForm : SwitchRow? = self?.form.rowBy(tag: "roundtrip")
 
-                        if distanceForm?.value==nil || fuel_priceForm?.value==nil || l100Form?.value==nil || kmlForm?.value==nil {
+                        if distanceForm?.value==nil || fuel_priceForm?.value==nil || kmlForm?.value==nil {
                             self!.showAlert(title: "Error", message: "Fill the missing fields")
                         } else {
                         
-                            let start_address = start_locationForm?.value.debugDescription.components(separatedBy: "\"")[1]
-                            let end_address = end_locationForm?.value.debugDescription.components(separatedBy: "\"")[1]
+//                            let start_address = start_locationForm?.value.debugDescription.components(separatedBy: "\"")[1]
+//                            let end_address = end_locationForm?.value.debugDescription.components(separatedBy: "\"")[1]
                             
                             var distance = Double(distanceForm!.value!)
                             let fuel_price = Double(fuel_priceForm!.value!)
